@@ -1,0 +1,41 @@
+Project #4
+The Job Queue
+Preston Shankle
+CSC 205
+
+TimeShare Class:
+    Methods:
+    1. buildQueue: void method that is passed the String array args and the empty queue inputQueue. inputQueue is
+                    enqueued with all jobs from the file sent in from the command line.
+
+    2. jobProcessor: void method that is passed the previously filled inputQueue, an empty Queue finishQueue, and an integer
+                     array named clocks. Integer clocks mainClock, idleClock, usageClock, are declared along with the Queue jobQueue.
+                     jobQueue is queued with the front Job of inputQueue, 'finished' Jobs from jobQueue are queued into finishQueue.
+                     Method ends with both job & input queues empty, clock integers are saved into the final int array clocks.
+
+    3. jobParser: Job returning method that takes in the String jobInfo from the buildQueue method, which is one entire line from
+                  the file saved in String array args. StringTokenizer class is used to parse the lines and the name, arrivalTime,
+                  and runTime are all saved into a new Job which is being returned.
+
+    4. jobStarted: Boolean returning method that takes in a queue inputQueue and Job testJob. A clone Queue of inputQueue
+                   is created called temp. If the Job is found in the queue and has begun, the method returns true.
+
+    5. analysisPrint: void method that takes in the inputQueue and integers idleClock and jobCount. Clones of inputQueue
+                      temp and temp2 are created. temp2 is used to calculate values for jobCount and TWaitTime (total wait time).
+                      Information about each Job are printed using the Job class's toString() method.
+                      Avg wait time is calculated by dividing total wait time by job count. CPU usage and CPU idle were stored
+                      in clocks array slots 0 and 1, filled in jobProcessor method, and stored as integers idleClock and usageClock. Finally, CPU usage is the usageClock
+                      over the usageClock plus the idleClock times 10000. The CPU usage is then entirely divided by 100 to give the resulting accurate double.
+
+Input example (stored in jobs2.dat):
+
+job1	01	01
+job2	02	02
+job3	03	05
+job4    04  03
+job5    05  02
+
+Average wait time: ( 1 + 5 + 7 ) = 13 (total wait time) / 5 (number of jobs) = 2.6
+CPU Usage: Sum of all job wait time = 13
+CPU Idle: Amount of time between each job = 0
+CPU Usage (%): (13 / ( 13 + 0) * 10000) / 100 = 100%

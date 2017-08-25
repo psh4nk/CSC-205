@@ -1,0 +1,137 @@
+ Project #3
+The Personnel Database
+ Assignment, Design, and Implementation
+ 
+The Personnel.java file allows the user to create a vast array of employee objects, describe their attributes, which include name and pay,
+and modify, download, upload, and delete them as the user sees fit. The class Employee and its children classes, SalariedEmployee and HourlyEmployee,
+although far simpler than the main driver program, also greatly come into play in this project in the sense that they are the objects that the user 
+will be interacting with and modifying. A summarized description of each class and its methods within follows:
+
+Personnel Class:
+Global Variables:
+1. private static int numEmployees - Stores the number of employees so that the driver can keep track of them throughout use.
+2. private static ArrayList<Employee> EmployeesList - The storage container for all of the Employee Objects.
+Methods:
+1. selection() - Void method that allows the user to select from the main menu which part of the program they would like to interact with.
+2. printMenu() - String returning method that prints the menu to the screen and takes in the user's input for the selection method.
+3. createEmployee() - Void method that allows the user to define the characteristics of the new employee, including the name and wage.
+  This method also allows the user to input whether the employee will be an hourly or a salaried employee.
+4. newHourlyEmployee() - Void method that is passed a String "name." This method is an extension from the createEmployee
+     method that allows the user to specifically create a new hourly employee.
+5. newSalariedEmployee() - Void method that is passed a String "name." This method is an extension from the createEmployee
+   method that allows the user to specifically create a new salaried employee.
+6. checks() - Void method that uses the respective salaried employee or hourly employee class's computePay
+  method to calculate the amount of pay that the employee should receive.
+7. raise() - Void method that allows the user to increase the pay of all users by a certain percentage.
+8. printWages() - Void method that prints the name and wage of each employee onto the screen.
+9. download() - Void method that outputs a binary file containing the objects stored within the ArrayList EmployeeList.
+File is stored in the local directory. The format of the file is important in this download, for the Object
+is stored in such a way that all of its attributes can be described in a very concise manner, so concise that it barely
+takes any size. That is why the binary file format is used. The information about the object is output as 1's and 0's into 
+a machine-readable file. The file is converted using the ObjectOutputStream method of the Java.io.Serializable class.
+10. upload() - Void method that allows the user to upload a previously downloaded file back into the program. Again, the method uses the 
+Java.io.Serializable class to convert the binary file back into Objects one by one. They are pushed back into the EmployeeList
+ArrayList, checked for any duplications, and put back to work.
+11. eraseFile() - Void method that allows the user to delete the employee.dat file from the local directory.
+12. deleteEmployee() - Void method that allows the user to delete a particular employee.
+13. modifyEmployee() - Void method that uses a switch statement to access other methods that allow the user to modify the employee's name or wage.
+   Uses the printModificationMenu method to take in the menu selection from the user.
+14. search(String name) - Integer returning method that is mainly required by the deleteEmployee method to find a particular employee in the EmployeeList.
+  A name is put into the method, and the integer location of the Employee is returned.
+15. raiseSelectedWage(String name, int loc) - A void method that has the parameters String name and integer loc. Allows the user to
+  increase one particular employee's pay by a certain percentage.
+16. setNewWage(String name, int loc) - A void method that has the parameters String name and integer loc. Allows the user to completely change the employee's current 
+wage.
+17. setNewName(String name, int loc) - A void method that has the parameters String name and integer loc. Allows the user to change the Employee's name. Could be 
+useful for a position
+   change or if someone changes marital status, etc.
+18. printModificationMenu() - String returning method that prints the Modification menu to the screen and allows the user to input their selection.
+19. compare(ArrayList<Employee> list) - Void method that takes in an Employee ArrayList "List" as a parameter. Used by the upload method to check for any Employees
+that may have been duplicated. If there is a duplicated employee within the uploaded file, the employee is ignored.
+20. clearScreen() - Void method that clears the screen using some funky characters.
+21. error() -  Tells the user whether what they're typing is valid Personnel.java main menu syntax or not.
+22. modError() - Tells the user whether what they're typing is valid Personnel.java Modification Menu syntax or not.
+
+Employee Class:
+Global Variables:
+1. private String name - Stores the name of the Employee Object
+2. private double hourlyWage - Stores the wage of the Employee Object.
+Methods:
+1. Employee(String name, double hourlyWage) - Protected main constructor. Takes in a name and wage, and builds an employee with them.
+2. getName() - Public string returning method that returns the Employee's name.
+3. getWage() - Public double returning method that returns the Employee's wage.
+4. setName(String name) - Void method that sets the Employee up with a brand new name.
+5. setWage(double hourlyWage) - Void method that sets the Employee's wage.
+6. computePay(double name) - Abstract method that child classes implement to compute the pay of the Employee.
+7. equals(Employee name) - Boolean returning method that tells whether or not one Employee's name equals another Employee's name.
+8. raise(double hourlyWage) - Void method that takes in a double wage and uses that to raise the wage.
+
+HourlyEmployee Class:
+Methods:
+1. HourlyEmployee(String name, double hourlyWage) - The default constructor uses the parent class to create the HourlyEmployee.
+It can be said that the hourly employee bares more resemblence to his parent
+than his sibling does.
+2. computePay(double hourlyWage) - String returning method that computes the pay of an employee using a sweet ternary operator deal and also uses the toDollars method
+   to put the bow on top.
+3. toString() - String returning method that implements the Object class's toString method and adds class-specific modifications to it.
+4. toDollars(double amount) - String returning method that makes the pay/wage/salary output make more sense to the user. Either rounds the
+  amount to two dec places or adds a '.00'.
+  
+SalariedEmployee Class:
+Methods:
+1. SalariedEmployee(String name, double salary) - Constructor method that accesses the parent Employee class to create a new SalariedEmployee.
+2. getSalary() - Returns the "Wage" of the employee, but first it converts it into a salary.
+3. setSalary(double salary) - Void method that sets the Employee's salary by accessing the Employee class setWage method.
+4. computePay(double hourlyWage) - String returning method that calculated the pay that the Employee should receive. It's always just the salary / 52.
+5. toString() - String returning method that implements the Object class's toString method and adds some Employeeistic extras to it.
+6. toDollars(double amount) - String returning method that makes the pay/wage/salary output make more sense to the user. Either rounds the
+  amount to two dec places or adds a '.00'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

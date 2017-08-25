@@ -1,0 +1,38 @@
+Script started on Sat 27 Aug 2016 04:27:03 PM EDT
+]0;shankle_p@cobra:~/Labs/Lab1[?1034h[shankle_p@cobra Lab1]$ exitjava Prog1 < data1.dat[6Pc Prog1.java[2Pcat[C[C[C[C[C[C[C[C[C[C[Cexit[Kscript[2Pexitcat Prog1.java
+
+import java.util.*;
+
+//  Lab program 1
+//  This program reads integers and stops when 0 is read.
+//  It will print the product of all the integers before the 0.
+
+//  The program contains no error handling.
+
+public class Prog1 
+{
+	public static void main (String[] args)
+	{
+   		int Product = 1;
+   		int value;
+                Scanner stdin = new Scanner(System.in);
+		value = stdin.nextInt();
+
+   		while (value != 0)
+   		{
+      			Product *= value;
+		        value = stdin.nextInt();
+   		}
+
+   		System.out.println("The product is "  + Product);
+
+		System.exit(0);
+	}
+}
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ cat Prog1.javaexit[Kjava Prog1 < data1.dat[6Pc Prog1.java[2Pcat[C[C[C[C[C[C[C[C[C[C[C[2@javac[C[C[C[C[C[C[C[C[C[C[C
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ javac Prog1.java[2Pcat[C[C[C[C[C[C[C[C[C[C[Cexit[Kjava Prog1 < data1.dat
+The product is -3628800
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ exit
+exit
+
+Script done on Sat 27 Aug 2016 04:27:17 PM EDT

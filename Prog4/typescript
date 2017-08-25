@@ -1,0 +1,24 @@
+Script started on Wed 07 Dec 2016 11:52:14 PM EST
+]0;shankle_p@cobra:~/Prog4[?1034h[shankle_p@cobra Prog4]$ javac TimeShare.java
+]0;shankle_p@cobra:~/Prog4[shankle_p@cobra Prog4]$ java TimeShare jobs2.dat
+
+	Job Control Analysis : Summary Report
+	-------------------------------------
+
+	job id	arrival	start	run	wait	turnaround	
+	      	time   	time 	time	time	time      	
+	------	-------	-----	----	----	----------
+	job1	1	1	1	0	1
+	job2	2	2	2	0	2
+	job3	3	4	5	1	6
+	job4	4	9	3	5	8
+	job5	5	12	2	7	9
+		Average Wait Time => 2.6
+		CPU Usage => 13.0
+		CPU Idle => 0.0
+		CPU Usage (%) => 100.0%
+
+]0;shankle_p@cobra:~/Prog4[shankle_p@cobra Prog4]$ exit
+exit
+
+Script done on Wed 07 Dec 2016 11:53:13 PM EST

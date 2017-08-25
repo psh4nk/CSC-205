@@ -1,0 +1,70 @@
+Script started on Sat 27 Aug 2016 04:27:32 PM EDT
+]0;shankle_p@cobra:~/Labs/Lab1[?1034h[shankle_p@cobra Lab1]$ ja[K[Kcat Mind[KString.java
+
+//This program will return a minimum string in an array of strings
+//Written by: Preston Shankle
+
+
+import java.io.*;
+import java.util.*;
+
+public class MinString
+{
+    private static final int SIZE = 10;
+    public static void main(String[] args)
+    {
+        String[] list = new String[SIZE];
+        int numItems;
+
+        numItems = Initialize (list);
+        System.out.println(FindMin (list, numItems));
+    }
+
+    private static int Initialize (String[] list)
+    {
+        //post : List is initialized with all strings from file.
+
+        String filename, stateInput;
+        int i = 0, numItems = 0;
+        try  {
+            System.out.print("Input File : ");
+            Scanner stdin = new Scanner(System.in);
+            filename = stdin.nextLine();
+            stdin = new Scanner(new File(filename));
+
+            while ((stdin.hasNext()) && (i < list.length))
+            {
+                stateInput = stdin.nextLine();
+                System.out.println("S = " + stateInput);
+                list[i] = stateInput;
+                i++;
+            }
+            numItems = i;
+        }
+        catch (IOException e)  {
+            System.out.println(e.getMessage());
+        }
+        return numItems;
+    }
+
+    private static String FindMin(String[] list, int numItems)
+    {
+        String minString;
+        Arrays.sort(list, 0, numItems);
+        minString = list[0];
+        return minString;
+    }
+}
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ javac Mins[KString.java
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ java Mins[KString
+Input File : States.dat
+S = Georgia
+S = Florida
+S = North Carolina
+S = Tennessee
+S = Alabama
+Alabama
+]0;shankle_p@cobra:~/Labs/Lab1[shankle_p@cobra Lab1]$ ee[Kxit
+exit
+
+Script done on Sat 27 Aug 2016 04:28:04 PM EDT

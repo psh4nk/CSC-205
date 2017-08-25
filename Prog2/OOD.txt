@@ -1,0 +1,65 @@
+Methods:
+1. inputBooks:
+Integer returning method that is
+    passed the user-selected file name called 'inputFile'
+    and an empty LibraryBook ArrayList called 'books'
+    as parameters. The inputFile is scanned for
+    title names, author names, copyright dates, prices,
+    and genres, and each line of the file is used to
+    create a new LibraryBook with these given characteristics.
+    The ArrayList is filled with the newly defined LibraryBooks.
+
+2. printRecord:
+Void method that prints all characteristics
+    of a book using the LibraryBook ArrayList 'books' and the
+    integer 'location' of the book.
+
+3. sortBooks:
+Void method that is passed an ArrayList of
+    LibraryBooks 'books' and an integer number of books,
+    'numBooks.' Using a selection sort, the books are
+    sorted by title.
+
+4. welcomeScreen:
+String returning method that prints out a welcome menu
+    for the program. This method also scans the current
+    directory for data-containing files (.dat) and prints
+    them below the welcome screen. Finally, the user inputs the
+    chosen file name, and the method returns the user selection.
+
+5. printMenu:
+Void method that is passed a LibraryBook ArrayList 'books'
+    and an integer number of books 'numBooks.' The menu for the
+    program is printed to the user's screen, and the
+    userSelection method is called for the user to select which
+    action he would like to take.
+
+6. userSelection:
+Void method that is passed a LibraryBook ArrayList 'books'
+    and an integer value of the number of books, 'numBooks.'
+    A scanner object receives the user's selection from the
+    main menu, and a switch statement is used to determine which
+    method should be called next.
+
+7.searchAllBooks:
+Integer returning method that is passed a LibraryBook
+    ArrayList of 'books,' a String 'bookTitle,' and an
+    integer number of books 'numBooks.' Using a binary search,
+    the ArrayList is scanned for the bookTitle that is input by the user
+    in the searchBook method.
+
+8. searchBook:
+Void method that is passed a LibraryBook
+    ArrayList of 'books' and the integer 'numBooks.'
+    A title is input by the user and the searchAllBooks
+    method is called to search the ArrayList books for the title.
+
+9. displayRecords: 
+Void method that is passed the ArrayList books and
+    the integer number of books and prints a card using
+    the printRecord method to show the user the information
+    about a selected book.
+
+10. clearScreen:
+Void method that prints a line of bash
+    magic to clear the screen of any text.

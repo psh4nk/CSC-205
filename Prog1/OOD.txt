@@ -1,0 +1,41 @@
+Global variables:
+	1. int total --> used to count times required to win the game
+	2. int SIZE --> defines the length of bingo card rows and columns
+	3. int direction --> used to define what directional type of win we have
+
+Methods:
+1. fillCard:
+	Void method that is passed array list, initialized in main. 
+	Array list is generated using the input from the
+	bingo.in file included in the source directory. 
+	
+2. printCard:
+	Void method that prints the bingo card in
+    its original, unmodified state. Card is the
+    previously generated (from bingo.in) array
+    that is printed to the user's screen.
+	
+3. playGame:
+	Void method that is passed array card,
+    initializes the ArrayList 'bin,'
+	and generates random values that are used to
+	fill out the bingo card. Bin is printed along with
+	number of random integers it took to win the game.
+	
+4. checkForWin:
+	Returns a boolean value determining whether a general win
+    has been achieved. Array card and arrayList bin are evaluated
+    to determine equality of each element. For each equal element,
+    a string "X" displaces the current card integer. New card
+    showing matches is printed.
+	
+5. checkForDirection:
+	Returns boolean value determining whether directional win
+    has been achieved. Array card is evaluated for directional
+    win. Global integer 'direction' is also set based on the type of win.
+	
+6. directionSwitch:
+	Uses global integer 'direction'
+    (value is set in checkForDirection)
+    to print what type of win was achieved
+
